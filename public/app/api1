@@ -1,0 +1,17 @@
+export async function GET() {
+  const employees = [
+    { name: "Alice", hours: 8, wage: 18 },
+    { name: "Bob", hours: 7, wage: 20 },
+  ];
+
+  const payroll = employees.map((emp) => ({
+    name: emp.name,
+    hours: emp.hours,
+    wage: emp.wage,
+    total: emp.hours * emp.wage,
+  }));
+
+  const totalLabor = payroll.reduce((sum, p) => sum + p.total, 0);
+
+  return Response.json({ payroll, totalLabor });
+}
