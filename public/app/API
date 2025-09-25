@@ -1,0 +1,10 @@
+export async function GET() {
+  const data = [
+    { hour: "9 AM", sales: 400 },
+    { hour: "10 AM", sales: 650 },
+    { hour: "11 AM", sales: 1200 },
+    { hour: "12 PM", sales: 1500 },
+    { hour: "1 PM", sales: 900 },
+  ];
+  return Response.json(data);
+}
